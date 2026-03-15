@@ -49,11 +49,14 @@
 
       <el-row :gutter="20">
         <el-col
-          v-for="item in candidates"
+          v-for="(item, index) in candidates"
           :key="item.id"
           :xs="24"
           :sm="12"
           class="card-col"
+          v-motion
+          :initial="{ opacity: 0, scale: 0.9 }"
+          :enter="{ opacity: 1, scale: 1, transition: { delay: 100 * index } }"
         >
           <el-card class="name-card" :class="{ selected: item.id === selectedCandidateId }" shadow="hover">
             <div class="name-header">

@@ -1,7 +1,7 @@
 <template>
   <div class="app-shell">
     <header class="hero-section">
-      <div class="hero-copy">
+      <div class="hero-copy" v-motion-slide-visible-top>
         <p class="eyebrow">Chinese Naming Studio</p>
         <h1>千载吉名</h1>
         <p class="hero-text">
@@ -17,7 +17,14 @@
       </div>
 
       <div class="hero-panels">
-        <article v-for="item in inspirationCards" :key="item.title" class="hero-panel">
+        <article 
+          v-for="(item, index) in inspirationCards" 
+          :key="item.title" 
+          class="hero-panel"
+          v-motion
+          :initial="{ opacity: 0, y: 20 }"
+          :enter="{ opacity: 1, y: 0, transition: { delay: 100 * (index + 1) } }"
+        >
           <span class="panel-kicker">{{ item.kicker }}</span>
           <h2>{{ item.title }}</h2>
           <p>{{ item.text }}</p>
@@ -39,7 +46,7 @@
         />
       </section>
 
-      <div v-if="error" class="error-state">
+      <div v-if="error" class="error-state" v-motion-slide-visible-top>
         <el-alert :title="error" type="error" show-icon :closable="false" />
       </div>
 
@@ -76,6 +83,7 @@
 
           <NicknameForm
             v-if="showNicknameForm"
+            v-motion-slide-visible-bottom
             :loading="nicknameLoading"
             :formal-name="selectedFormalName"
             :gender="gender"
@@ -114,6 +122,7 @@
 
           <BaziResult
             v-else
+            v-motion-fade-visible
             :bazi-result="workspaceBaziResult"
             :loading="baziLoading"
             :error="baziError"

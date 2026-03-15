@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.2",
+    "@vueuse/motion": "^3.0.3",
     "axios": "^1.7.7",
     "china-area-data": "^5.0.1",
     "element-china-area-data": "^6.1.0",
