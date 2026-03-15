@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /Users/zhiheng/Documents/code/Card/baby-name -type f -name \"*.vue\" -o -name \"*.js\" -o -name \"*.json\" | grep -E \"\\\\.\\(vue|js|json\\)$\" | head -30)"
+    ]
+  }
+}

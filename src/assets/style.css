@@ -1,0 +1,70 @@
+:root {
+  --theme-color: #ba2c2c;
+  --theme-dark: #8c1c1c;
+  --theme-bg: #fffbf5;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  background-color: var(--theme-bg);
+  background-image: 
+    linear-gradient(rgba(255, 251, 245, 0.9), rgba(255, 251, 245, 0.9)),
+    url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMjBoNDB2MjBIMHoiIGZpbGw9IiNmZmZiZjUiIGZpbGwtb3BhY2l0eT0iMSIvPjxwYXRoIGQ9Ik0wIDIwaDQwdjIwSDB6IiBmaWxsPSIjZjNlOWU5IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==');
+  color: #333;
+}
+
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Customizing Element Plus styling to match theme */
+.el-button--primary {
+  --el-button-bg-color: var(--theme-color) !important;
+  --el-button-border-color: var(--theme-color) !important;
+  --el-button-hover-bg-color: #e33838 !important;
+  --el-button-hover-border-color: #e33838 !important;
+  --el-button-active-bg-color: var(--theme-dark) !important;
+  --el-button-active-border-color: var(--theme-dark) !important;
+}
+
+.el-radio__input.is-checked .el-radio__inner {
+  border-color: var(--theme-color) !important;
+  background: var(--theme-color) !important;
+}
+
+.el-radio__input.is-checked+.el-radio__label {
+  color: var(--theme-color) !important;
+}
+
+.el-date-table td.today .el-date-table-cell__text {
+  color: var(--theme-color) !important;
+}
+
+.el-date-table td.current:not(.disabled) .el-date-table-cell__text {
+  background-color: var(--theme-color) !important;
+}
+
+.el-input.is-active .el-input__wrapper,
+.el-input.is-focus .el-input__wrapper,
+.el-textarea__inner:focus {
+  box-shadow: 0 0 0 1px var(--theme-color) inset !important;
+}
+
+.el-cascader-node.in-active-path,
+.el-cascader-node.is-active,
+.el-cascader-node.is-selectable.in-checked-path {
+  color: var(--theme-color) !important;
+}
+
+.el-icon.is-loading {
+  animation: loading-rotate 2s linear infinite;
+}
+
+@keyframes loading-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
